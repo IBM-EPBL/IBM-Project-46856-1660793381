@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Material Management</h1>
+</br>
+
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+{% endfor %}
+
+<div class="container px-4 text-center">
+    <div class="row gx-5">
+        <div class="col">
+            <h3>Add New Material to database</h3>
+            <div style="padding: 25px 50px 75px 100px;">
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                
+                    {{form.item_id.label(class="form-label")}}
+                    {{ form.item_id(class="form-control")}}
+                    <br/>
+                    {{form.item.label(class="form-label")}}
+                    {{ form.item(class="form-control")}}
+                    <br/>
+                    {{form.quantity.label(class="form-label")}}
+                    {{ form.quantity(class="form-control")}}
+                    <br/>
+                    {{form.expiry.label(class="form-label")}}
+                    {{ form.expiry(class="form-control")}}
+                    <br/>
+                    {{form.price.label(class="form-label")}}
+                    {{ form.price(class="form-control")}}
+                    <br/>
+                    {{form.t_price.label(class="form-label")}}
+                    {{ form.t_price(class="form-control")}}
+                    <br/>
+                    {{ form.Submit_add(class="btn btn-primary") }}
+                </form>
+            </div>
+        </div>
+
+        <div class="col">
+        </br>
+        </br>
+            <h3>Delete Material from database</h3>
+            <div style="padding: 25px 50px 75px 100px;">
+                <form method="POST">
+                    {{ del_form.hidden_tag() }}
+                    {{ del_form.del_item_id.label(class="form-label") }}
+                    {{ del_form.del_item_id(class="form-control")}}
+                    <br/>
+                    {{ del_form.del_quantity.label(class="form-label") }}
+                    {{ del_form.del_quantity(class="form-control")}}
+                    <br/>
+                    {{ del_form.Submit_del(class="btn btn-primary") }}
+                
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+        
+
+
+
+{% endblock %}

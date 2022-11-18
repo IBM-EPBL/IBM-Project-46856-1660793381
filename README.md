@@ -2,10 +2,16 @@
 
 # Inventory Management System for Retailers
 
-## Team ID : PNT2022TMID31573
+## Project Details
+| Team ID       | PNT2022TMID31573             |
+| ------------- | -------------                |
+| Technology    | Inventory Management System for Retailers            | 
 
-## Team Details:
-* DAYANAND R. - Team Lead
-* DEVARAJ S. - Team Member 1
-* MAHESHWARANSRIRAM M. - Team Member 2
-* SABARI K R. - Team Member 3
+
+##  Team Members
+| Team Member  | Name            | Register No    |
+| -------------| -------------   | --------       |
+| Team Lead    | DAYANAND R       | 711719104033   |
+| Team Member1 | DEVARAJ S          | 711719104011   |
+| Team Member2 | MAHESHWARANSRIRAM M     | 711719104015   |
+| Team Member3 | SABARI K R| 711719104029   |

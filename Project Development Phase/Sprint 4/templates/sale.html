@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+{% endfor %}
+
+
+<h3>Item To be Sold: </h3>
+<div style="padding: 25px 50px 75px 100px;">
+<form method="POST">
+    {{ sale_form.hidden_tag() }}
+    
+    {{sale_form.sale_id.label(class="form-label")}}
+    {{ sale_form.sale_id(class="form-control")}}
+    <br/>
+    {{sale_form.sale_quantity.label(class="form-label")}}
+    {{ sale_form.sale_quantity(class="form-control")}}
+    <br/>
+    {{ sale_form.Submit_sale(class="btn btn-primary") }}
+</form>
+</div>
+</br>
+
+{% endblock %}
