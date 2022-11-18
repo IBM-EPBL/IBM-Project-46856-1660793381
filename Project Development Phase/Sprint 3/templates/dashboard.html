@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> Hello {{name}} </h1>
+
+<div class="card" style="margin: 25px 100px 90px;">
+    <div class="card-body">
+        <h4 class="card-title">Item List: </h4>
+            <div class="table" style="margin: 25px 50px 90px;">
+                <table class="fl-table" style="border: 1px solid; width: 80%;">
+                    <thead class="table-dark">
+
+                    {% for header in headings %}
+                    <th style="height: 40px;">{{header}}</th>
+                    {% endfor %}
+                </thead>
+                <tbody class="table-group-divider">
+                    {% for row in data %}
+                    <tr>
+                    {% for cell in row %}
+                    <td>{{row[cell]}}</td>
+                    {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                </table>
+            </div>
+    </div>
+</div>
+
+{% endblock %}

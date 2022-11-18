@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Profile</h2>
+<hr />
+<div style="padding: 25px 25px 25px 90px;">
+    <div class="card">
+        <h5 class="card-header">User Details</h5>
+        <div class="card-body">
+        <h5 class="card-title">USERNAME : {{data['USERNAME']}}</h5>
+        <h5 class="card-title">FIRST NAME : {{data['FIRST_NAME']}}</h5>
+        <h5 class="card-title">LAST NAME : {{data['LAST_NAME']}}</h5>
+        <h5 class="card-title">EMAIL : {{data['EMAIL']}}</h5>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+
+<div class="container px-4 text-center">
+    <div class="row gx-5">
+        <div class="col">    
+            <div style="padding: 25px 25px 25px 90px;">
+                <div class="forms-wrapper mg-20 " >
+                    <form action="{{url_for('updateUser')}}" method="post">
+                        <h3>Update user details</h3>
+                        <div class="row mb-3">
+                            <label for="inputState" class="form-label">Choose a field :</label>
+                            <select id="inputState" name="field" class="form-select" id="field">
+                                <option value="USERNAME">USERNAME</option>
+                                <option value="FIRST_NAME">FIRST NAME</option>
+                                <option value="LAST_NAME">LAST NAME</option>
+                            </select>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="input-value" class="form-label">Enter Value</label>
+                            <input type="text" class="form-control" name="value" id="inputEmail4" name="input-value">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-3">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col">
+            <div style="padding: 25px 25px 25px 90px;">
+                <div class="forms-wrapper mg-20 " >
+                    <form action="{{url_for('updatePassword')}}" method="post">
+                        <h3>Update Password</h3>
+                        <div class="row mb-3">
+                            <label class="form-label" for="prev-password">
+                                Enter Old Password</label>
+                            <input
+                                class="form-control"
+                                type="password"
+                                name="prev-password"
+                                placeholder=" " />
+                        </div>
+                        <div class="row mb-3">
+                            <label class="form-label" for="cur-password"> Enter New Password</label>
+                            <input
+                                class="form-control"
+                                type="password"
+                                name="cur-password"
+                                placeholder=" "/>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="form-label" for="confirm-password">
+                                Enter Confirm Password</label>
+                            <input
+                                class="form-control"
+                                type="password"
+                                name="confirm-password"
+                                placeholder=" "/>
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-3">Update</button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+  
